@@ -2,7 +2,9 @@
 
 > A high-performance, mobile-responsive dashboard concept designed for managing business metrics and partner services.
 
-[**🔗 View Live Demo**](https://concept-dashboard.lovable.app/)
+[**🔗 View Live Demo**](https://concept-dashboard.lovable.app/) 
+
+[![Built with Lovable](https://img.shields.io/badge/Built_with-Lovable-salmon?style=flat-square&logo=heart)](https://lovable.dev/)
 
 ---
 
