@@ -6,6 +6,7 @@ type TabId = 'home' | 'insights' | 'profile';
 interface BottomNavProps {
   activeTab: TabId;
   onTabChange: (tab: TabId) => void;
+  onProfileClick?: () => void;
 }
 
 const navItems = [
@@ -17,7 +18,15 @@ const navItems = [
 /**
  * Mobile bottom navigation bar
  */
-export function BottomNav({ activeTab, onTabChange }: BottomNavProps) {
+export function BottomNav({ activeTab, onTabChange, onProfileClick }: BottomNavProps) {
+  const handleClick = (itemId: TabId) => {
+    if (itemId === 'profile' && onProfileClick) {
+      onProfileClick();
+    } else {
+      onTabChange(itemId);
+    }
+  };
+
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-lg border-t border-border safe-area-pb">
       <div className="flex items-center justify-around max-w-2xl mx-auto h-16 px-4">
@@ -28,7 +37,7 @@ export function BottomNav({ activeTab, onTabChange }: BottomNavProps) {
           return (
             <button
               key={item.id}
-              onClick={() => onTabChange(item.id)}
+              onClick={() => handleClick(item.id)}
               className={cn(
                 "flex flex-col items-center justify-center gap-1 flex-1 h-full",
                 "transition-colors duration-200 focus:outline-none",

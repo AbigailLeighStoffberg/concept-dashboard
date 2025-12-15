@@ -14,27 +14,48 @@ const iconMap = {
   qr: QrCode,
 };
 
+/** Pastel color schemes for each metric type */
+const colorSchemes = {
+  users: {
+    bg: 'bg-pulse-mint',
+    iconBg: 'bg-pulse-mint-icon/15',
+    iconColor: 'text-pulse-mint-icon',
+  },
+  revenue: {
+    bg: 'bg-pulse-beige',
+    iconBg: 'bg-pulse-beige-icon/15',
+    iconColor: 'text-pulse-beige-icon',
+  },
+  qr: {
+    bg: 'bg-pulse-lavender',
+    iconBg: 'bg-pulse-lavender-icon/15',
+    iconColor: 'text-pulse-lavender-icon',
+  },
+};
+
 /**
- * Individual pulse metric card showing key KPIs
+ * Individual pulse metric card showing key KPIs with pastel backgrounds
  */
 export function PulseCard({ metric, index = 0 }: PulseCardProps) {
   const Icon = iconMap[metric.icon];
+  const colors = colorSchemes[metric.icon];
   const hasPositiveChange = metric.change && metric.change > 0;
   const hasNegativeChange = metric.change && metric.change < 0;
 
   return (
     <Card 
       className={cn(
-        "min-w-[140px] flex-shrink-0 p-4 bg-card border border-border",
+        "min-w-[140px] flex-shrink-0 p-4 border-0",
         "rounded-2xl shadow-card hover:shadow-elevated transition-shadow duration-200",
-        "animate-fade-in"
+        "animate-fade-in",
+        colors.bg
       )}
       style={{ animationDelay: `${index * 100}ms` }}
     >
       {/* Icon */}
       <div className="flex items-center justify-between mb-3">
-        <div className="h-9 w-9 rounded-xl bg-primary/10 flex items-center justify-center">
-          <Icon className="h-4 w-4 text-primary" />
+        <div className={cn("h-9 w-9 rounded-xl flex items-center justify-center", colors.iconBg)}>
+          <Icon className={cn("h-4 w-4", colors.iconColor)} />
         </div>
         
         {/* Change Indicator */}
