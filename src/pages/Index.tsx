@@ -3,9 +3,11 @@ import { DashboardHeader } from '@/components/dashboard/DashboardHeader';
 import { PulseSection } from '@/components/dashboard/PulseSection';
 import { ActivityChart } from '@/components/dashboard/ActivityChart';
 import { SmartInsightCard } from '@/components/dashboard/SmartInsightCard';
+import { RecommendationsSection } from '@/components/dashboard/RecommendationsSection';
 import { InsightsView } from '@/components/dashboard/InsightsView';
 import { ProfileView } from '@/components/dashboard/ProfileView';
 import { BottomNav, TabId } from '@/components/navigation/BottomNav';
+import { SettingsDrawer } from '@/components/navigation/SettingsDrawer';
 import { 
   mockHotel, 
   mockPulseMetrics, 
@@ -20,6 +22,7 @@ import { useToast } from '@/hooks/use-toast';
  */
 const Index = () => {
   const [activeTab, setActiveTab] = useState<TabId>('home');
+  const [settingsOpen, setSettingsOpen] = useState(false);
   const { toast } = useToast();
 
   const handleInsightAction = (insightId: string) => {
@@ -62,6 +65,9 @@ const Index = () => {
                 ))}
               </div>
             </section>
+
+            {/* Recommendations Grid */}
+            <RecommendationsSection />
           </div>
         )}
 
@@ -71,7 +77,14 @@ const Index = () => {
       </main>
 
       {/* Bottom Navigation */}
-      <BottomNav activeTab={activeTab} onTabChange={setActiveTab} />
+      <BottomNav 
+        activeTab={activeTab} 
+        onTabChange={setActiveTab}
+        onProfileClick={() => setSettingsOpen(true)}
+      />
+
+      {/* Settings Drawer */}
+      <SettingsDrawer open={settingsOpen} onOpenChange={setSettingsOpen} />
     </div>
   );
 };

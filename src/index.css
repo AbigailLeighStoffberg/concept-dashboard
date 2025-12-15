@@ -6,23 +6,23 @@
 
 @layer base {
   :root {
-    /* Core palette */
-    --background: 210 17% 98%;
-    --foreground: 220 40% 13%;
+    /* Core palette - Airy Look */
+    --background: 210 20% 98%;
+    --foreground: 220 13% 18%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 40% 13%;
+    --card-foreground: 220 13% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 40% 13%;
+    --popover-foreground: 220 13% 18%;
 
-    /* Deep Navy - Primary brand color */
-    --primary: 216 78% 11%;
+    /* Primary - Dark Grey for text */
+    --primary: 220 13% 18%;
     --primary-foreground: 0 0% 100%;
 
     /* Secondary - Subtle grey */
     --secondary: 210 14% 93%;
-    --secondary-foreground: 220 40% 13%;
+    --secondary-foreground: 220 13% 18%;
 
     --muted: 210 14% 93%;
     --muted-foreground: 215 16% 47%;
@@ -47,11 +47,29 @@
     --warning: 38 92% 50%;
     --warning-foreground: 0 0% 100%;
 
+    /* Pastel Category Colors */
+    --pulse-mint: 158 64% 92%;
+    --pulse-mint-icon: 158 64% 35%;
+    --pulse-beige: 43 77% 90%;
+    --pulse-beige-icon: 38 75% 45%;
+    --pulse-lavender: 270 67% 93%;
+    --pulse-lavender-icon: 270 50% 50%;
+
+    /* Category Card Colors */
+    --category-peach: 24 100% 93%;
+    --category-peach-icon: 24 85% 50%;
+    --category-mint: 158 64% 92%;
+    --category-mint-icon: 158 64% 35%;
+    --category-blue: 200 80% 92%;
+    --category-blue-icon: 200 70% 45%;
+    --category-pink: 330 80% 93%;
+    --category-pink-icon: 330 65% 55%;
+
     /* Shadows */
-    --shadow-sm: 0 1px 2px 0 hsl(220 40% 13% / 0.03);
-    --shadow-md: 0 4px 6px -1px hsl(220 40% 13% / 0.05), 0 2px 4px -2px hsl(220 40% 13% / 0.05);
-    --shadow-lg: 0 10px 15px -3px hsl(220 40% 13% / 0.08), 0 4px 6px -4px hsl(220 40% 13% / 0.05);
-    --shadow-card: 0 1px 3px 0 hsl(220 40% 13% / 0.04), 0 1px 2px -1px hsl(220 40% 13% / 0.04);
+    --shadow-sm: 0 1px 2px 0 hsl(220 13% 18% / 0.03);
+    --shadow-md: 0 4px 6px -1px hsl(220 13% 18% / 0.05), 0 2px 4px -2px hsl(220 13% 18% / 0.05);
+    --shadow-lg: 0 10px 15px -3px hsl(220 13% 18% / 0.08), 0 4px 6px -4px hsl(220 13% 18% / 0.05);
+    --shadow-card: 0 1px 3px 0 hsl(220 13% 18% / 0.04), 0 1px 2px -1px hsl(220 13% 18% / 0.04);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;

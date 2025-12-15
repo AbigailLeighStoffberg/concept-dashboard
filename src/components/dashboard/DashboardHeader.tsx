@@ -17,7 +17,7 @@ export function DashboardHeader({
   const greeting = getTimeGreeting();
 
   return (
-    <header className="sticky top-0 z-10 bg-background/95 backdrop-blur-sm border-b border-border px-4 py-4">
+    <header className="sticky top-0 z-10 bg-card backdrop-blur-sm border-b border-border px-4 py-4">
       <div className="flex items-center justify-between max-w-2xl mx-auto">
         {/* Greeting Section */}
         <div className="flex flex-col">
