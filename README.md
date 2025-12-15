@@ -4,7 +4,7 @@ This project is a UI/UX Concept and Technical Demo created to demonstrate how mo
 
 Note: This is an unofficial concept project created for portfolio purposes and is not affiliated with any services.
 
-
+[**🔗 View Live Demo**](https://concept-dashboard.lovable.app/)
 
 🛠️ Tech Stack
 
@@ -21,3 +21,6 @@ Real-time Analytics: Visualizing guest scans and revenue with Recharts.
 AI-Driven Insights: A concept feature that parses data to suggest actionable business moves (e.g., "Add late-night food options").
 
 Responsive Design: Optimized for mobile usage by busy hotel managers.
+
+**Component Structure:**
+The codebase follows a modular structure to separate concerns:
