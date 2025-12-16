@@ -12,7 +12,7 @@ export function PulseSection({ metrics }: PulseSectionProps) {
     <section>
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-sm font-semibold text-foreground uppercase tracking-wide">
-          Performance Pulse
+          Key Metrics
         </h2>
         <span className="text-xs text-muted-foreground">Last 7 days</span>
       </div>
