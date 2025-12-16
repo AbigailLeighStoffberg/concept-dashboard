@@ -45,8 +45,8 @@ export function PulseCard({ metric, index = 0 }: PulseCardProps) {
   return (
     <Card 
       className={cn(
-        "min-w-[140px] flex-shrink-0 p-4 border-0",
-        "rounded-2xl shadow-card hover:shadow-elevated transition-shadow duration-200",
+        "min-w-[160px] flex-shrink-0 p-4 border border-white/50",
+        "rounded-2xl glass-subtle hover:shadow-elevated transition-all duration-300",
         "animate-fade-in",
         colors.bg
       )}
