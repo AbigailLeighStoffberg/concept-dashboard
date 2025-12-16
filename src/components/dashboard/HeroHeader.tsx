@@ -61,10 +61,10 @@ export function HeroHeader({
 
           {/* Right: Actions */}
           <div className="flex items-center gap-2">
-            {/* AI Badge */}
+            {/* Q-Insight Badge */}
             <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/10">
               <Sparkles className="h-3.5 w-3.5 text-accent" />
-              <span className="text-xs font-medium text-white/90">AI Powered</span>
+              <span className="text-xs font-medium text-white/90">Q-Insight</span>
             </div>
 
             {/* Notification Bell */}

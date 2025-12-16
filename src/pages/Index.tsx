@@ -9,6 +9,7 @@ import { AIChatPanel } from '@/components/dashboard/AIChatPanel';
 import { ProfileView } from '@/components/dashboard/ProfileView';
 import { BottomNav, TabId } from '@/components/navigation/BottomNav';
 import { SettingsDrawer } from '@/components/navigation/SettingsDrawer';
+import { AIChatBubble } from '@/components/navigation/AIChatBubble';
 import { 
   mockHotel, 
   mockPulseMetrics, 
@@ -32,6 +33,10 @@ const Index = () => {
     });
   };
 
+  const handleChatBubbleClick = () => {
+    setActiveTab('insights');
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Premium Hero Header */}
@@ -48,7 +53,7 @@ const Index = () => {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               {/* Main Content Column */}
               <div className="lg:col-span-2 space-y-6">
-                {/* Pulse Metrics */}
+                {/* Key Metrics */}
                 <PulseSection metrics={mockPulseMetrics} />
 
                 {/* Activity Chart */}
@@ -69,15 +74,18 @@ const Index = () => {
                     ))}
                   </div>
                 </section>
-
-                {/* Recommendations Grid */}
-                <RecommendationsSection />
               </div>
 
               {/* Sidebar Column - Desktop Only */}
               <div className="hidden lg:block space-y-6">
                 <LiveStatsCard />
+                <RecommendationsSection />
               </div>
+            </div>
+
+            {/* Recommendations Grid - Mobile Only */}
+            <div className="lg:hidden mt-6">
+              <RecommendationsSection />
             </div>
           </div>
         )}
@@ -107,6 +115,11 @@ const Index = () => {
         
         {activeTab === 'profile' && <ProfileView hotel={mockHotel} />}
       </main>
+
+      {/* AI Chat Bubble - Only show on home tab */}
+      {activeTab === 'home' && (
+        <AIChatBubble onClick={handleChatBubbleClick} />
+      )}
 
       {/* Bottom Navigation */}
       <BottomNav 
