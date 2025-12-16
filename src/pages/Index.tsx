@@ -3,7 +3,6 @@ import { HeroHeader } from '@/components/dashboard/HeroHeader';
 import { PulseSection } from '@/components/dashboard/PulseSection';
 import { ActivityChart } from '@/components/dashboard/ActivityChart';
 import { SmartInsightCard } from '@/components/dashboard/SmartInsightCard';
-import { RecommendationsSection } from '@/components/dashboard/RecommendationsSection';
 import { LiveStatsCard } from '@/components/dashboard/LiveStatsCard';
 import { AIChatPanel } from '@/components/dashboard/AIChatPanel';
 import { ProfileView } from '@/components/dashboard/ProfileView';
@@ -27,9 +26,10 @@ const Index = () => {
   const { toast } = useToast();
 
   const handleInsightAction = (insightId: string) => {
+    setActiveTab('insights');
     toast({
-      title: 'Coming Soon',
-      description: 'This feature will be available in the next update.',
+      title: 'Ask Q-Insight AI',
+      description: 'Use the AI assistant to add recommendations based on this insight.',
     });
   };
 
@@ -79,13 +79,7 @@ const Index = () => {
               {/* Sidebar Column - Desktop Only */}
               <div className="hidden lg:block space-y-6">
                 <LiveStatsCard />
-                <RecommendationsSection />
               </div>
-            </div>
-
-            {/* Recommendations Grid - Mobile Only */}
-            <div className="lg:hidden mt-6">
-              <RecommendationsSection />
             </div>
           </div>
         )}
@@ -102,7 +96,7 @@ const Index = () => {
                   <div className="space-y-2 text-sm text-muted-foreground">
                     <p>• Ask about guest trends</p>
                     <p>• Generate reports</p>
-                    <p>• Get partner recommendations</p>
+                    <p>• Add partner recommendations</p>
                   </div>
                 </div>
               </div>
