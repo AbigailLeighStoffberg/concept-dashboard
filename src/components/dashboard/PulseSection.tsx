@@ -19,7 +19,7 @@ export function PulseSection({ metrics }: PulseSectionProps) {
       
       {/* Responsive grid on desktop, scroll on mobile */}
       <div className="overflow-x-auto scrollbar-hide -mx-4 px-4 lg:mx-0 lg:px-0 lg:overflow-visible">
-        <div className="flex gap-3 pb-2 lg:grid lg:grid-cols-3 lg:gap-4">
+        <div className="flex gap-3 pb-2 lg:grid lg:grid-cols-3 lg:gap-4 min-w-max lg:min-w-0">
           {metrics.map((metric, index) => (
             <PulseCard key={metric.id} metric={metric} index={index} />
           ))}
