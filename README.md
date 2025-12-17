@@ -11,7 +11,7 @@
 ### 🎯 Project Goal
 This project is a **UI/UX Concept** and **Technical Demo** created to demonstrate how modern web technologies (React, Tailwind, AI integration) can be used to enhance the partner experience for travel platforms.
 
-*Note: This is an unofficial concept project created for portfolio purposes and is not affiliated with any specific services.*
+*Note: This is an unofficial concept project created for portfolio purposes.*
 
 ### 🛠️ Tech Stack
 * **Frontend:** React, TypeScript, Vite
