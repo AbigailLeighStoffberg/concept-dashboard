@@ -8,7 +8,6 @@ import { AIChatPanel } from '@/components/dashboard/AIChatPanel';
 import { ProfileView } from '@/components/dashboard/ProfileView';
 import { BottomNav, TabId } from '@/components/navigation/BottomNav';
 import { SettingsDrawer } from '@/components/navigation/SettingsDrawer';
-import { AIChatBubble } from '@/components/navigation/AIChatBubble';
 import { 
   mockHotel, 
   mockPulseMetrics, 
@@ -29,12 +28,8 @@ const Index = () => {
     setActiveTab('insights');
     toast({
       title: 'Ask Q-Insight AI',
-      description: 'Use the AI assistant to add recommendations based on this insight.',
+      description: 'Use the AI assistant to explore this insight further.',
     });
-  };
-
-  const handleChatBubbleClick = () => {
-    setActiveTab('insights');
   };
 
   return (
@@ -50,7 +45,7 @@ const Index = () => {
         {activeTab === 'home' && (
           <div className="premium-container py-6">
             {/* Desktop: Two Column Layout */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 px-4 lg:px-0">
               {/* Main Content Column */}
               <div className="lg:col-span-2 space-y-6">
                 {/* Key Metrics */}
@@ -62,7 +57,7 @@ const Index = () => {
                 {/* Smart Insights */}
                 <section>
                   <h2 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-3">
-                    Smart Suggestions
+                    Q-Insight Suggestions
                   </h2>
                   <div className="space-y-3">
                     {mockInsights.map((insight) => (
@@ -109,11 +104,6 @@ const Index = () => {
         
         {activeTab === 'profile' && <ProfileView hotel={mockHotel} />}
       </main>
-
-      {/* AI Chat Bubble - Only show on home tab */}
-      {activeTab === 'home' && (
-        <AIChatBubble onClick={handleChatBubbleClick} />
-      )}
 
       {/* Bottom Navigation */}
       <BottomNav 

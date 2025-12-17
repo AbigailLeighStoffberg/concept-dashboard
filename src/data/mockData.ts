@@ -58,8 +58,8 @@ export const mockInsights: SmartInsight[] = [
     id: 'insight-001',
     type: 'recommendation',
     title: 'Late Night Dining Opportunity',
-    description: 'Your guests are searching for "Late Night Food" at 11 PM. Add 2 recommendations to capture this demand.',
-    actionLabel: 'Add Recommendations',
+    description: 'Your guests are searching for "Late Night Food" at 11 PM. Consider reaching out to local partners.',
+    actionLabel: 'Chat with AI',
     priority: 'high',
   },
   {
@@ -67,6 +67,7 @@ export const mockInsights: SmartInsight[] = [
     type: 'trend',
     title: 'Weekend Peak Detected',
     description: 'Saturday shows 45% higher engagement. Consider weekend-specific promotions.',
+    actionLabel: 'View Details',
     priority: 'medium',
   },
 ];

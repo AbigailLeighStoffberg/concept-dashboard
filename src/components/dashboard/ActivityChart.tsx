@@ -49,7 +49,7 @@ function CustomTooltip({
  */
 export function ActivityChart({ data }: ActivityChartProps) {
   return (
-    <Card className="mx-4 rounded-2xl shadow-card border border-border animate-slide-up">
+    <Card className="rounded-2xl shadow-card border border-border animate-slide-up">
       <CardHeader className="pb-2">
         <div className="flex items-center justify-between">
           <CardTitle className="text-base font-semibold text-foreground">

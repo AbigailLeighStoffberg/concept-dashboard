@@ -30,7 +30,7 @@ export function SmartInsightCard({ insight, onAction }: SmartInsightCardProps) {
   return (
     <Card 
       className={cn(
-        "mx-4 p-4 rounded-2xl shadow-card border-2 transition-all duration-200",
+        "p-4 rounded-2xl shadow-card border-2 transition-all duration-200",
         "hover:shadow-elevated animate-slide-up",
         priorityStyles[insight.priority]
       )}
