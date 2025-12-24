@@ -16,7 +16,7 @@ const navItems = [
 ];
 
 /**
- * Mobile bottom navigation bar
+ * Floating bottom navigation with frosted glass effect
  */
 export function BottomNav({ activeTab, onTabChange, onProfileClick }: BottomNavProps) {
   const handleClick = (itemId: TabId) => {
@@ -28,48 +28,50 @@ export function BottomNav({ activeTab, onTabChange, onProfileClick }: BottomNavP
   };
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-lg border-t border-border safe-area-pb">
-      <div className="flex items-center justify-around max-w-2xl mx-auto h-16 px-4">
-        {navItems.map((item) => {
-          const isActive = activeTab === item.id;
-          const Icon = item.icon;
+    <nav className="fixed bottom-4 left-4 right-4 z-50 mx-auto max-w-md">
+      <div className="glass-nav rounded-3xl shadow-float safe-area-pb">
+        <div className="flex items-center justify-around h-16 px-4">
+          {navItems.map((item) => {
+            const isActive = activeTab === item.id;
+            const Icon = item.icon;
 
-          return (
-            <button
-              key={item.id}
-              onClick={() => handleClick(item.id)}
-              className={cn(
-                "flex flex-col items-center justify-center gap-1 flex-1 h-full",
-                "transition-colors duration-200 focus:outline-none",
-                "active:scale-95 transform"
-              )}
-              aria-label={item.label}
-              aria-current={isActive ? 'page' : undefined}
-            >
-              <div
+            return (
+              <button
+                key={item.id}
+                onClick={() => handleClick(item.id)}
                 className={cn(
-                  "flex items-center justify-center h-8 w-8 rounded-xl transition-all duration-200",
-                  isActive && "bg-accent/15"
+                  "flex flex-col items-center justify-center gap-1 flex-1 h-full",
+                  "transition-all duration-300 focus:outline-none",
+                  "active:scale-95 transform relative"
                 )}
+                aria-label={item.label}
+                aria-current={isActive ? 'page' : undefined}
               >
-                <Icon 
+                <div
                   className={cn(
-                    "h-5 w-5 transition-colors duration-200",
+                    "flex items-center justify-center h-10 w-10 rounded-2xl transition-all duration-300",
+                    isActive && "bg-accent shadow-lg shadow-accent/30"
+                  )}
+                >
+                  <Icon 
+                    className={cn(
+                      "h-5 w-5 transition-colors duration-300",
+                      isActive ? "text-accent-foreground" : "text-muted-foreground"
+                    )} 
+                  />
+                </div>
+                <span 
+                  className={cn(
+                    "text-[10px] font-medium transition-colors duration-300",
                     isActive ? "text-accent" : "text-muted-foreground"
-                  )} 
-                />
-              </div>
-              <span 
-                className={cn(
-                  "text-[10px] font-medium transition-colors duration-200",
-                  isActive ? "text-accent" : "text-muted-foreground"
-                )}
-              >
-                {item.label}
-              </span>
-            </button>
-          );
-        })}
+                  )}
+                >
+                  {item.label}
+                </span>
+              </button>
+            );
+          })}
+        </div>
       </div>
     </nav>
   );
