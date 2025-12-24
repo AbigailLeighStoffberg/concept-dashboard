@@ -5,6 +5,7 @@ import { PulseSection } from '@/components/dashboard/PulseSection';
 import { ActivityChart } from '@/components/dashboard/ActivityChart';
 import { SmartInsightCard } from '@/components/dashboard/SmartInsightCard';
 import { LiveStatsCard } from '@/components/dashboard/LiveStatsCard';
+import { GeoMapCard } from '@/components/dashboard/GeoMapCard';
 import { AIChatPanel } from '@/components/dashboard/AIChatPanel';
 import { ProfileView } from '@/components/dashboard/ProfileView';
 import { BottomNav, TabId } from '@/components/navigation/BottomNav';
@@ -15,7 +16,8 @@ import {
   mockManagerMetrics,
   mockInfluencerMetrics,
   mockActivityData, 
-  mockInsights 
+  mockInsights,
+  mockGeoScans
 } from '@/data/mockData';
 import { useToast } from '@/hooks/use-toast';
 import { UserRole } from '@/types/dashboard';
@@ -60,6 +62,11 @@ const Index = () => {
               <div className="lg:col-span-2 space-y-6">
                 {/* Key Metrics */}
                 <PulseSection metrics={metrics} />
+
+                {/* Activity Map - Manager Only */}
+                {role === 'manager' && (
+                  <GeoMapCard scans={mockGeoScans} />
+                )}
 
                 {/* Activity Chart */}
                 <ActivityChart data={mockActivityData} />
