@@ -1,15 +1,17 @@
 /**
- * Dashboard data types for Q-Insight
+ * Dashboard data types for Lobbyly
  * Structured for easy Supabase integration
  */
+
+export type UserRole = 'manager' | 'influencer';
 
 export interface PulseMetric {
   id: string;
   label: string;
   value: string | number;
-  change?: number; // Percentage change vs last period
+  change?: number;
   changeLabel?: string;
-  icon: 'users' | 'revenue' | 'qr';
+  icon: 'users' | 'revenue' | 'qr' | 'reach' | 'commission' | 'merch' | 'funnel';
 }
 
 export interface ActivityDataPoint {
@@ -35,6 +37,15 @@ export interface HotelProfile {
   plan: 'starter' | 'professional' | 'enterprise';
 }
 
+export interface InfluencerProfile {
+  id: string;
+  name: string;
+  handle: string;
+  totalScans: number;
+  commissionEarned: number;
+  merchCodes: number;
+}
+
 export interface DashboardState {
   hotel: HotelProfile;
   pulseMetrics: PulseMetric[];
@@ -42,4 +53,12 @@ export interface DashboardState {
   insights: SmartInsight[];
   isLoading: boolean;
   lastUpdated: Date | null;
+}
+
+export interface GeoScanPoint {
+  id: string;
+  lat: number;
+  lng: number;
+  type: 'lobby' | 'restaurant' | 'spa' | 'pool' | 'room';
+  timestamp: Date;
 }

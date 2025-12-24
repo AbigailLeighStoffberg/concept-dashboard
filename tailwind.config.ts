@@ -15,6 +15,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Playfair Display', 'Georgia', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -58,6 +59,12 @@ export default {
           DEFAULT: "hsl(var(--warning))",
           foreground: "hsl(var(--warning-foreground))",
         },
+        aura: {
+          lavender: "hsl(var(--aura-lavender))",
+          blue: "hsl(var(--aura-blue))",
+          peach: "hsl(var(--aura-peach))",
+          mint: "hsl(var(--aura-mint))",
+        },
         pulse: {
           mint: "hsl(var(--pulse-mint))",
           "mint-icon": "hsl(var(--pulse-mint-icon))",
@@ -93,17 +100,18 @@ export default {
       },
       borderRadius: {
         lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-        xl: "1rem",
-        "2xl": "1.25rem",
-        "3xl": "1.5rem",
+        md: "calc(var(--radius) - 4px)",
+        sm: "calc(var(--radius) - 8px)",
+        xl: "1.75rem",
+        "2xl": "2rem",
+        "3xl": "2.5rem",
       },
       boxShadow: {
         card: "var(--shadow-card)",
         elevated: "var(--shadow-md)",
         prominent: "var(--shadow-lg)",
         glass: "var(--shadow-glass)",
+        float: "var(--shadow-float)",
       },
       keyframes: {
         "accordion-down": {
@@ -138,6 +146,20 @@ export default {
           "0%, 60%, 100%": { opacity: "0.3" },
           "30%": { opacity: "1" },
         },
+        "pulse-glow": {
+          "0%, 100%": { 
+            boxShadow: "0 0 20px hsl(var(--accent) / 0.3)",
+            transform: "scale(1)"
+          },
+          "50%": { 
+            boxShadow: "0 0 30px hsl(var(--accent) / 0.5)",
+            transform: "scale(1.02)"
+          },
+        },
+        "float": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-4px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -148,6 +170,8 @@ export default {
         "pulse-soft": "pulse-soft 2s ease-in-out infinite",
         shimmer: "shimmer 2s linear infinite",
         "typing": "typing 1.4s infinite",
+        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+        "float": "float 3s ease-in-out infinite",
       },
     },
   },
